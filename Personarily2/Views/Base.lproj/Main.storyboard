@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w5G-Bb-ekB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Personarily2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性格診断" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-iG-oSW">
+                                <rect key="frame" x="116.5" y="421" width="181" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="i7q-gU-oSg">
+                                <rect key="frame" x="0.0" y="745" width="414" height="121"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-k4-1ZC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.8942297937" green="0.96301827620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WDk-Md-G8X"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="診断開始">
+                                                    <attributes>
+                                                        <font key="NSFont" size="34" name="HiraginoSans-W3"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="elB-bn-5aO" kind="show" identifier="SelectThemeSegue" id="VXu-t8-uXy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-mf-P3e">
+                                        <rect key="frame" x="0.0" y="71" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hYH-fX-e2R"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="履歴">
+                                                    <attributes>
+                                                        <font key="NSFont" size="36" name="HiraginoSans-W3"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.8942297937" green="0.96301827620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="k2e-to-7Qd" kind="show" identifier="HistorySegue" id="wq5-cc-oaQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hnW-iG-oSW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WC-YI-Cnd"/>
+                            <constraint firstAttribute="bottom" secondItem="i7q-gU-oSg" secondAttribute="bottom" constant="30" id="CJV-Sb-HVS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i7q-gU-oSg" secondAttribute="trailing" id="LKV-N9-fcL"/>
+                            <constraint firstItem="hnW-iG-oSW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UId-3j-6fN"/>
+                            <constraint firstItem="i7q-gU-oSg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rRM-mA-6V9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gWk-ub-E0m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="116.51785714285714"/>
+        </scene>
+        <!--Select Quiz Table View Controller-->
+        <scene sceneID="uUe-bW-dHz">
+            <objects>
+                <tableViewController id="elB-bn-5aO" customClass="SelectQuizTableViewController" customModule="Personarily2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="TME-sW-WZU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectQuizCell" id="cbC-I3-oPJ">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbC-I3-oPJ" id="Mo4-AO-WBe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="elB-bn-5aO" id="St2-zT-r7O"/>
+                            <outlet property="delegate" destination="elB-bn-5aO" id="1tL-1i-1Aq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lRl-oQ-mbX"/>
+                    <connections>
+                        <segue destination="HLN-Yt-mhk" kind="show" identifier="QuizSegue" id="qwD-MA-bBj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOD-0t-8Fh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="117"/>
+        </scene>
+        <!--Answer Quiz View Controller-->
+        <scene sceneID="5zh-kG-bDu">
+            <objects>
+                <viewController id="HLN-Yt-mhk" customClass="AnswerQuizViewController" customModule="Personarily2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yk1-gB-gAt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-YZ-3kS">
+                                <rect key="frame" x="0.0" y="782" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ecs-iO-bC8"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="結果を見る">
+                                            <attributes>
+                                                <font key="NSFont" size="27" name="HiraginoSans-W3"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fy2-8a-sju">
+                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizCellIdentifier" id="WTt-MG-PPT" customClass="QuizCell" customModule="Personarily2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WTt-MG-PPT" id="OPf-Fj-te5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VpH-tA-1p2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VpH-tA-1p2" firstAttribute="trailing" secondItem="Fy2-8a-sju" secondAttribute="trailing" id="33T-h5-Avk"/>
+                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="leading" secondItem="VpH-tA-1p2" secondAttribute="leading" id="HpK-qX-Vup"/>
+                            <constraint firstItem="Fy2-8a-sju" firstAttribute="leading" secondItem="VpH-tA-1p2" secondAttribute="leading" id="Y4M-9v-zcB"/>
+                            <constraint firstItem="VpH-tA-1p2" firstAttribute="bottom" secondItem="YcS-YZ-3kS" secondAttribute="bottom" constant="30" id="naH-MS-1kj"/>
+                            <constraint firstItem="Fy2-8a-sju" firstAttribute="top" secondItem="VpH-tA-1p2" secondAttribute="top" id="tzG-9s-AYI"/>
+                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="top" secondItem="Fy2-8a-sju" secondAttribute="bottom" id="vUh-0U-twm"/>
+                            <constraint firstItem="VpH-tA-1p2" firstAttribute="trailing" secondItem="YcS-YZ-3kS" secondAttribute="trailing" id="zJp-k1-9v4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DsT-ye-fUj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3B-K7-xYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2476.811594202899" y="116.51785714285714"/>
+        </scene>
+        <!--Select History Table View Controller-->
+        <scene sceneID="qUQ-kS-FyH">
+            <objects>
+                <tableViewController id="k2e-to-7Qd" customClass="SelectHistoryTableViewController" customModule="Personarily2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fz8-Kx-B7b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="TvE-5N-a0D">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TvE-5N-a0D" id="iYe-Me-LNC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="k2e-to-7Qd" id="VBW-W1-WAt"/>
+                            <outlet property="delegate" destination="k2e-to-7Qd" id="MoT-3K-m2h"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nE5-kW-MU2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTy-Ej-bkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="838"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f3h-p5-iqi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w5G-Bb-ekB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OY1-FO-9bV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TAU-uV-s8N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ds-Cv-aJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52.173913043478265" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
