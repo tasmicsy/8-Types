@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021E60EF2754BF41002EACC3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E60EE2754BF41002EACC3 /* ResultViewController.swift */; };
 		02AFB8432750A596005C1D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8422750A596005C1D5C /* AppDelegate.swift */; };
 		02AFB8452750A596005C1D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8442750A596005C1D5C /* SceneDelegate.swift */; };
 		02AFB8472750A596005C1D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8462750A596005C1D5C /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021E60EE2754BF41002EACC3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		02AFB83F2750A596005C1D5C /* Personarily2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personarily2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AFB8422750A596005C1D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02AFB8442750A596005C1D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				02AFB8812750CB27005C1D5C /* SelectQuizTableViewController.swift */,
 				02AFB8852750CB71005C1D5C /* SelectHistoryTableViewController.swift */,
 				02AFB8872750CE1F005C1D5C /* AnswerQuizViewController.swift */,
+				021E60EE2754BF41002EACC3 /* ResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				02AFB8452750A596005C1D5C /* SceneDelegate.swift in Sources */,
 				02AFB8902750D57F005C1D5C /* Question.swift in Sources */,
 				02AFB84D2750A596005C1D5C /* Personarily2.xcdatamodeld in Sources */,
+				021E60EF2754BF41002EACC3 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

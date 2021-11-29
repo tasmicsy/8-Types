@@ -28,7 +28,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-ha-xiK">
                                 <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="○"/>
                                 <connections>
                                     <action selector="didTapQuizButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Omz-P5-EqY"/>
                                 </connections>
@@ -36,7 +36,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNN-BB-Dcv">
                                 <rect key="frame" x="64" y="0.0" width="64" height="50"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="○"/>
                                 <connections>
                                     <action selector="didTapQuizButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ybZ-cr-02B"/>
                                 </connections>
@@ -44,7 +44,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KY0-Ks-VYp">
                                 <rect key="frame" x="128" y="0.0" width="64" height="50"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="○"/>
                                 <connections>
                                     <action selector="didTapQuizButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CuR-Vx-Jmc"/>
                                 </connections>
@@ -52,7 +52,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6T-8S-9xN">
                                 <rect key="frame" x="192" y="0.0" width="64" height="50"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="○"/>
                                 <connections>
                                     <action selector="didTapQuizButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NDQ-G5-zRa"/>
                                 </connections>
@@ -60,7 +60,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u4-ex-XW2">
                                 <rect key="frame" x="256" y="0.0" width="64" height="50"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="○"/>
                                 <connections>
                                     <action selector="didTapQuizButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kTj-Dh-sDb"/>
                                 </connections>
@@ -83,13 +83,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="answerButtons" destination="0u4-ex-XW2" id="2dO-Y3-sbZ"/>
                 <outlet property="questionLabel" destination="ZnU-Zy-kCG" id="TGw-sf-fda"/>
+                <outletCollection property="answerButtons" destination="Wa1-ha-xiK" collectionClass="NSMutableArray" id="7GZ-8E-ndT"/>
+                <outletCollection property="answerButtons" destination="vNN-BB-Dcv" collectionClass="NSMutableArray" id="g48-WU-vbo"/>
+                <outletCollection property="answerButtons" destination="KY0-Ks-VYp" collectionClass="NSMutableArray" id="Rh3-Fo-zSz"/>
+                <outletCollection property="answerButtons" destination="r6T-8S-9xN" collectionClass="NSMutableArray" id="15X-nb-Z4S"/>
+                <outletCollection property="answerButtons" destination="0u4-ex-XW2" collectionClass="NSMutableArray" id="Ipd-gG-5Rg"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="110.82589285714285"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="circle" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

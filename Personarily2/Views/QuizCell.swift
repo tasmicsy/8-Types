@@ -23,7 +23,9 @@ class QuizCell: UITableViewCell {
         }
     }
     @IBOutlet weak var questionLabel: UILabel!
+    
     @IBOutlet var answerButtons: [UIButton]!
+    
     var delegate: QuizCellDelegate?
     
     override func awakeFromNib() {
@@ -35,6 +37,8 @@ class QuizCell: UITableViewCell {
     @IBAction func didTapQuizButton(_ sender: UIButton) {
         if let index = self.answerButtons.firstIndex(of: sender){
             self.currentQuizButtonIndex = index
+            delegate?.quizCellDidChangeCurrentButtonIndex(self, index: index)
+            print(index)
         }
     }
     

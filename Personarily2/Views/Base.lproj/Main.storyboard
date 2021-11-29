@@ -144,6 +144,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="eYQ-A6-MLT" kind="show" identifier="CheckResultSegue" id="mxw-do-rN4"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fy2-8a-sju">
                                 <rect key="frame" x="0.0" y="88" width="414" height="694"/>
@@ -218,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="-52.173913043478265" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="0BC-J1-OvW">
             <objects>
-                <viewController id="eYQ-A6-MLT" sceneMemberID="viewController">
+                <viewController id="eYQ-A6-MLT" customClass="ResultViewController" customModule="Personarily2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUk-Tm-0sl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -91,7 +91,7 @@ class SelectQuizTableViewController: UITableViewController {
             let answerQuizViewController = segue.destination as! AnswerQuizViewController
             let index = tableView.indexPathForSelectedRow!.row
             answerQuizViewController.q = questions[index]
-            print(answerQuizViewController.q)
+           // print(answerQuizViewController.q)
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

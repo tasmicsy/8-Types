@@ -10,7 +10,7 @@ struct K {
         static let selectTheme = "SelectThemeSegue"
         static let history = "HistorySegue"
         static let ThemeToAnswerQuiz = "QuizSegue"
-        static let checkResult = "checkResultSegue"
+        static let checkResult = "CheckResultSegue"
     }
     struct Cells {
         static let QuizCellNibName = "QuizCell"

@@ -30,28 +30,33 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
     
 
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+////        if segue.identifier == K.Segue.checkResult {
+////            let resultViewController = segue.destination as! ResultViewController
+////            answerQuizViewController.q =
+////            print(answerQuizViewController.q)
+//    }
+    
 
 }
 
 // MARK: - quizTableViewのアレンジ
 
-extension AnswerQuizViewController: UITableViewDataSource {
-    //, QuizCellDelegate
-//    func quizCellDidChangeCurrentButtonIndex(_ cell: QuizCell, index: Int) {
-//        if let indexPath = self.quizTableView.indexPath(for: cell){
-//            self.q.question[indexPath.row].answer = index
-//            print(index)
-//        }
-//    }
+extension AnswerQuizViewController: UITableViewDataSource, QuizCellDelegate {
+    func quizCellDidChangeCurrentButtonIndex(_ cell: QuizCell, index: Int) {
+        if let indexPath = self.quizTableView.indexPath(for: cell){
+            self.q.question[indexPath.row].answer = index
+            print(index)
+        }else{
+            print("ここきてます")
+        }
+    }
 
 
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,8 +67,8 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let question = q.question[indexPath.row]
     let cell = quizTableView.dequeueReusableCell(withIdentifier: K.Cells.QuizCellIdentifier, for: indexPath) as! QuizCell
-    //cell.questionLabel.text = question.text
-    print(question.text)
+    cell.questionLabel.text = question.text
+   // print(question.text)
 
     return cell
 }
