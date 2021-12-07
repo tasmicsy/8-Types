@@ -11,7 +11,8 @@ class SelectQuizTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(UINib(nibName: K.Cells.SelectQuizCellNibname, bundle: nil), forCellReuseIdentifier: K.Cells.SelectQuizCellNibname)
+        tableView.estimatedRowHeight = 500
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,17 +34,17 @@ class SelectQuizTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.SelectQuizCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.SelectQuizCellNibname, for: indexPath) as! SelectQuizTableViewCell
         let title = questions[indexPath.row]
-        cell.textLabel?.text = title.title
-        
+        cell.seriesLabel.text = title.title
+        cell.seriesView.backgroundColor = K.colors[indexPath.row]
         // Configure the cell...
 
         return cell
     }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.Segue.ThemeToAnswerQuiz, sender: Any?.self)
+    }
     
 
     /*

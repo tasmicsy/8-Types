@@ -19,6 +19,7 @@ class QuizCell: UITableViewCell {
             self.updateCurrentQuizButton(value)
             if let delegate = self.delegate {
                 delegate.quizCellDidChangeCurrentButtonIndex(self, index: value)
+             //   print("didset内にいます")
             }
         }
     }
@@ -30,7 +31,12 @@ class QuizCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("ここまできてるか確認")
+ 
+//        for i in answerButtons{
+//            answerButtons(i)?.foregroundColor = K.colors(i)
+//        }
+        
+        //print("ここまできてるか確認")
         // Initialization code
     }
     
@@ -38,17 +44,24 @@ class QuizCell: UITableViewCell {
         if let index = self.answerButtons.firstIndex(of: sender){
             self.currentQuizButtonIndex = index
             delegate?.quizCellDidChangeCurrentButtonIndex(self, index: index)
-            print(index)
+           // print("didTapQuizButton")
+            //Answers.aArray[sender.tag] = index
+            //print(Answers.aArray)
         }
     }
     
     private func updateCurrentQuizButton(_ currentIndex: Int){
         for (index, answerButton) in self.answerButtons.enumerated(){
             if index == currentIndex {
+               // answerButton.title = "●"
                 answerButton.setTitle("●", for: .normal)
+                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(K.fontSizes[index]))
+                //print(answerButton.titleLabel?.text)
+
             } else {
                 answerButton.setTitle("○", for: .normal)
-                
+                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(K.fontSizes[index]))
+
             }
         }
     }
