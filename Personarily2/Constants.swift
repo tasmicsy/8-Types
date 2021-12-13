@@ -19,6 +19,9 @@ struct K {
         static let HistoryCellIdentifier = "HistoryCell"
         static let SelectQuizCellIdentifier = "SelectQuizCell"
         static let SelectQuizCellNibname = "SelectQuizTableViewCell"
+        static let characterCellIdentifier = "ResultCellIdentifier"
+        static let characterCellNibname =
+        "ResultTableViewCell"
     }
     static let colors = [UIColor(red: 0.33, green: 0.94, blue: 0.77, alpha: 1.00),
                          UIColor(red: 0.51, green: 0.93, blue: 0.93, alpha: 1.00),
@@ -26,5 +29,6 @@ struct K {
                          UIColor(red: 0.64, green: 0.61, blue: 1.00, alpha: 1.00),
                          UIColor(red: 0.87, green: 0.90, blue: 0.91, alpha: 1.00)
 ]
+    static let teruColors = [UIColor(red: 0.39, green: 0.73, blue: 0.71, alpha: 1.00)]
     static let fontSizes = [14, 18, 22, 26, 30]
 }

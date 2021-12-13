@@ -16,54 +16,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性格診断" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-iG-oSW">
-                                <rect key="frame" x="116.5" y="421" width="181" height="54"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                <color key="textColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="125" translatesAutoresizingMaskIntoConstraints="NO" id="xev-8g-4QT">
+                                <rect key="frame" x="30" y="275" width="354" height="346.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-iG-oSW">
+                                        <rect key="frame" x="74.5" y="0.0" width="205.5" height="84"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Case8">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="72" name="Impact"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性格診断は、あなたの内面を映し出す方法です。人からどのように見られているか、良いとことろ悪いところを見つめ直してみましょう。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKd-6D-sxG">
+                                        <rect key="frame" x="0.0" y="209" width="354" height="137.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tKd-6D-sxG" firstAttribute="leading" secondItem="xev-8g-4QT" secondAttribute="leading" id="Gfj-fP-V2f"/>
+                                    <constraint firstAttribute="trailing" secondItem="tKd-6D-sxG" secondAttribute="trailing" id="TTM-4f-aRi"/>
+                                </constraints>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="i7q-gU-oSg">
-                                <rect key="frame" x="0.0" y="745" width="414" height="121"/>
+                                <rect key="frame" x="30" y="725" width="354" height="121"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-k4-1ZC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.8942297937" green="0.96301827620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WDk-Md-G8X"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="診断開始">
-                                                    <attributes>
-                                                        <font key="NSFont" size="34" name="HiraginoSans-W3"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseForegroundColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="さっそく診断する">
+                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="32"/>
+                                            <color key="baseForegroundColor" red="0.3921568627" green="0.73333334920000004" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="elB-bn-5aO" kind="show" identifier="SelectThemeSegue" id="VXu-t8-uXy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-mf-P3e">
-                                        <rect key="frame" x="0.0" y="71" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="71" width="354" height="50"/>
+                                        <color key="backgroundColor" red="0.83137255909999996" green="0.93333339689999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hYH-fX-e2R"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.83137255909999996" green="0.93333339689999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="履歴">
-                                                    <attributes>
-                                                        <font key="NSFont" size="36" name="HiraginoSans-W3"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseForegroundColor" red="0.8942297937" green="0.96301827620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="履歴をみる">
+                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="33"/>
+                                            <color key="baseForegroundColor" red="0.39215683940000001" green="0.73333334920000004" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.83137255909999996" green="0.93333339689999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="k2e-to-7Qd" kind="show" identifier="HistorySegue" id="wq5-cc-oaQ"/>
@@ -71,15 +81,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性格診断アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc9-B0-qJ1">
+                                <rect key="frame" x="30" y="88" width="177.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.3921568627" green="0.73333334920000004" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="hnW-iG-oSW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WC-YI-Cnd"/>
-                            <constraint firstAttribute="bottom" secondItem="i7q-gU-oSg" secondAttribute="bottom" constant="30" id="CJV-Sb-HVS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i7q-gU-oSg" secondAttribute="trailing" id="LKV-N9-fcL"/>
-                            <constraint firstItem="hnW-iG-oSW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UId-3j-6fN"/>
-                            <constraint firstItem="i7q-gU-oSg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rRM-mA-6V9"/>
+                            <constraint firstAttribute="bottom" secondItem="i7q-gU-oSg" secondAttribute="bottom" constant="50" id="CJV-Sb-HVS"/>
+                            <constraint firstItem="wc9-B0-qJ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H6v-TN-Syd"/>
+                            <constraint firstItem="xev-8g-4QT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mwi-2N-s6w"/>
+                            <constraint firstItem="xev-8g-4QT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dtS-9b-71Q"/>
+                            <constraint firstAttribute="trailing" secondItem="xev-8g-4QT" secondAttribute="trailing" constant="30" id="eQW-Ei-9Aa"/>
+                            <constraint firstItem="wc9-B0-qJ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="esA-8n-VhE"/>
+                            <constraint firstItem="xev-8g-4QT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="hFB-3E-zDm"/>
+                            <constraint firstItem="i7q-gU-oSg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kZK-EF-V13"/>
+                            <constraint firstItem="i7q-gU-oSg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="rRM-mA-6V9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gWk-ub-E0m"/>
@@ -119,14 +139,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-YZ-3kS">
-                                <rect key="frame" x="0.0" y="782" width="414" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-YZ-3kS">
+                                <rect key="frame" x="30" y="782" width="354" height="50"/>
+                                <color key="backgroundColor" red="0.47843140360000003" green="0.7254902124" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ecs-iO-bC8"/>
                                 </constraints>
-                                <color key="tintColor" red="0.1058760807" green="0.26274687050000001" blue="0.28235194089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <color key="tintColor" red="0.47843140360000003" green="0.7254902124" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="結果を見る">
                                             <attributes>
@@ -134,12 +155,12 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                </buttonConfiguration>
+                                </state>
                                 <connections>
                                     <segue destination="eYQ-A6-MLT" kind="show" identifier="CheckResultSegue" id="mxw-do-rN4"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fy2-8a-sju">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fy2-8a-sju">
                                 <rect key="frame" x="0.0" y="88" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -148,12 +169,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VpH-tA-1p2" firstAttribute="trailing" secondItem="Fy2-8a-sju" secondAttribute="trailing" id="33T-h5-Avk"/>
-                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="leading" secondItem="VpH-tA-1p2" secondAttribute="leading" id="HpK-qX-Vup"/>
+                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="leading" secondItem="VpH-tA-1p2" secondAttribute="leading" constant="30" id="HpK-qX-Vup"/>
                             <constraint firstItem="Fy2-8a-sju" firstAttribute="leading" secondItem="VpH-tA-1p2" secondAttribute="leading" id="Y4M-9v-zcB"/>
+                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="centerX" secondItem="Yk1-gB-gAt" secondAttribute="centerX" id="Ygi-Lz-Vh1"/>
                             <constraint firstItem="VpH-tA-1p2" firstAttribute="bottom" secondItem="YcS-YZ-3kS" secondAttribute="bottom" constant="30" id="naH-MS-1kj"/>
                             <constraint firstItem="Fy2-8a-sju" firstAttribute="top" secondItem="VpH-tA-1p2" secondAttribute="top" id="tzG-9s-AYI"/>
                             <constraint firstItem="YcS-YZ-3kS" firstAttribute="top" secondItem="Fy2-8a-sju" secondAttribute="bottom" id="vUh-0U-twm"/>
-                            <constraint firstItem="VpH-tA-1p2" firstAttribute="trailing" secondItem="YcS-YZ-3kS" secondAttribute="trailing" id="zJp-k1-9v4"/>
+                            <constraint firstItem="VpH-tA-1p2" firstAttribute="trailing" secondItem="YcS-YZ-3kS" secondAttribute="trailing" constant="30" id="zJp-k1-9v4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DsT-ye-fUj"/>
@@ -220,18 +242,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCz-pX-c4D">
-                                <rect key="frame" x="92" y="388" width="230" height="120"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合計点数は・・・" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdk-Hc-vTf">
-                                <rect key="frame" x="97.5" y="325.5" width="219" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-aa-cZo">
                                 <rect key="frame" x="0.0" y="782" width="414" height="50"/>
                                 <constraints>
@@ -245,28 +255,32 @@
                                     <segue destination="4AF-EY-6Hc" kind="unwind" unwindAction="unwind:" id="lwe-zI-d4Y"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xsB-J6-F28">
+                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vPA-dd-SfW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EEP-aa-cZo" firstAttribute="top" secondItem="xsB-J6-F28" secondAttribute="bottom" id="3HT-zh-Gej"/>
                             <constraint firstItem="vPA-dd-SfW" firstAttribute="trailing" secondItem="EEP-aa-cZo" secondAttribute="trailing" id="5Y8-i1-VRU"/>
                             <constraint firstItem="EEP-aa-cZo" firstAttribute="leading" secondItem="vPA-dd-SfW" secondAttribute="leading" id="98I-PC-Snn"/>
-                            <constraint firstItem="rCz-pX-c4D" firstAttribute="centerX" secondItem="DUk-Tm-0sl" secondAttribute="centerX" id="DRv-dm-jhS"/>
-                            <constraint firstItem="rCz-pX-c4D" firstAttribute="top" secondItem="Xdk-Hc-vTf" secondAttribute="bottom" constant="30" id="No3-Bl-HZG"/>
-                            <constraint firstItem="Xdk-Hc-vTf" firstAttribute="centerX" secondItem="DUk-Tm-0sl" secondAttribute="centerX" id="bvs-e1-5oM"/>
+                            <constraint firstItem="vPA-dd-SfW" firstAttribute="trailing" secondItem="xsB-J6-F28" secondAttribute="trailing" id="EBY-Ur-AUF"/>
+                            <constraint firstItem="xsB-J6-F28" firstAttribute="top" secondItem="vPA-dd-SfW" secondAttribute="top" id="XhU-Qw-v2z"/>
+                            <constraint firstItem="xsB-J6-F28" firstAttribute="leading" secondItem="vPA-dd-SfW" secondAttribute="leading" id="Yxx-W7-8Hp"/>
                             <constraint firstItem="vPA-dd-SfW" firstAttribute="bottom" secondItem="EEP-aa-cZo" secondAttribute="bottom" constant="30" id="kI1-Ue-8tW"/>
-                            <constraint firstItem="rCz-pX-c4D" firstAttribute="centerY" secondItem="DUk-Tm-0sl" secondAttribute="centerY" id="oIi-9k-Ntz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UZw-rz-0eD"/>
                     <connections>
-                        <outlet property="valueLabel" destination="rCz-pX-c4D" id="8K3-pU-mN5"/>
+                        <outlet property="characterTableView" destination="xsB-J6-F28" id="MSv-lf-v3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99w-aW-yb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4AF-EY-6Hc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3961" y="104"/>
+            <point key="canvasLocation" x="3370" y="117"/>
         </scene>
     </scenes>
     <resources>

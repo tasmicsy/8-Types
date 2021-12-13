@@ -55,9 +55,10 @@ extension AnswerQuizViewController: UITableViewDataSource, QuizCellDelegate {
         if let indexPath = self.quizTableView.indexPath(for: cell){
 
             self.q.question[indexPath.row].answer = index
-            print(self.q.question)
+           
+            //print(self.q.question)
         }else{
-            print("ここきてます")
+            //print("ここきてます")
         }
     }
 
@@ -71,7 +72,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     let question = q.question[indexPath.row]
     let cell = quizTableView.dequeueReusableCell(withIdentifier: K.Cells.QuizCellIdentifier, for: indexPath) as! QuizCell
-    cell.selectionStyle = .none
+//    cell.selectionStyle = .none
+    cell.questionNumberLabel.text = "Q\(indexPath.row + 1)"
     cell.questionLabel.text = question.text
    // print(question.text)
     cell.delegate = self
@@ -79,6 +81,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         for t in 0...4{
             if k == t{
                 cell.answerButtons[k].setTitle("●", for: .normal)
+              // print(cell.answerButtons[k].titleLabel?.text) //UIFont.systemFont(ofSize: 50)
             }else{
                 cell.answerButtons[t].setTitle("○", for: .normal)
             }

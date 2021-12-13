@@ -10,8 +10,11 @@
 		0219F7442754CDB50024517A /* SelectQuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0219F7422754CDB50024517A /* SelectQuizTableViewCell.swift */; };
 		0219F7452754CDB50024517A /* SelectQuizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0219F7432754CDB50024517A /* SelectQuizTableViewCell.xib */; };
 		021E60EF2754BF41002EACC3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E60EE2754BF41002EACC3 /* ResultViewController.swift */; };
-		02676098275DA172007E254B /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 02676097275DA172007E254B /* GoogleService-Info (1).plist */; };
+		024C114F27608A6D00505FC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024C114E27608A6D00505FC4 /* GoogleService-Info.plist */; };
+		024C115227608C7200505FC4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 024C115127608C7200505FC4 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		0267609B275F3339007E254B /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 0267609A275F3339007E254B /* Charts */; };
+		0267609E275F3CB0007E254B /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267609C275F3CAF007E254B /* ResultTableViewCell.swift */; };
+		0267609F275F3CB0007E254B /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0267609D275F3CAF007E254B /* ResultTableViewCell.xib */; };
 		02AFB8432750A596005C1D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8422750A596005C1D5C /* AppDelegate.swift */; };
 		02AFB8452750A596005C1D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8442750A596005C1D5C /* SceneDelegate.swift */; };
 		02AFB8472750A596005C1D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8462750A596005C1D5C /* ViewController.swift */; };
@@ -33,7 +36,9 @@
 		0219F7422754CDB50024517A /* SelectQuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizTableViewCell.swift; sourceTree = "<group>"; };
 		0219F7432754CDB50024517A /* SelectQuizTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectQuizTableViewCell.xib; sourceTree = "<group>"; };
 		021E60EE2754BF41002EACC3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		02676097275DA172007E254B /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		024C114E27608A6D00505FC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0267609C275F3CAF007E254B /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		0267609D275F3CAF007E254B /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		02AFB83F2750A596005C1D5C /* Personarily2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personarily2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AFB8422750A596005C1D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02AFB8442750A596005C1D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0267609B275F3339007E254B /* Charts in Frameworks */,
+				024C115227608C7200505FC4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +98,7 @@
 				02AFB84E2750A598005C1D5C /* Assets.xcassets */,
 				02AFB8502750A598005C1D5C /* LaunchScreen.storyboard */,
 				02AFB8532750A598005C1D5C /* Info.plist */,
-				02676097275DA172007E254B /* GoogleService-Info (1).plist */,
+				024C114E27608A6D00505FC4 /* GoogleService-Info.plist */,
 				02AFB84B2750A596005C1D5C /* Personarily2.xcdatamodeld */,
 				02AFB87C2750C87C005C1D5C /* Constants.swift */,
 			);
@@ -128,6 +134,8 @@
 				02AFB88A2750CE60005C1D5C /* QuizCell.xib */,
 				0219F7422754CDB50024517A /* SelectQuizTableViewCell.swift */,
 				0219F7432754CDB50024517A /* SelectQuizTableViewCell.xib */,
+				0267609C275F3CAF007E254B /* ResultTableViewCell.swift */,
+				0267609D275F3CAF007E254B /* ResultTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 			name = Personarily2;
 			packageProductDependencies = (
 				0267609A275F3339007E254B /* Charts */,
+				024C115127608C7200505FC4 /* FirebaseAnalyticsWithoutAdIdSupport */,
 			);
 			productName = Personarily2;
 			productReference = 02AFB83F2750A596005C1D5C /* Personarily2.app */;
@@ -181,6 +190,7 @@
 			mainGroup = 02AFB8362750A596005C1D5C;
 			packageReferences = (
 				02676099275F3339007E254B /* XCRemoteSwiftPackageReference "Charts" */,
+				024C115027608C7200505FC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 02AFB8402750A596005C1D5C /* Products */;
 			projectDirPath = "";
@@ -197,11 +207,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				02AFB8522750A598005C1D5C /* LaunchScreen.storyboard in Resources */,
-				02676098275DA172007E254B /* GoogleService-Info (1).plist in Resources */,
 				02AFB84F2750A598005C1D5C /* Assets.xcassets in Resources */,
 				02AFB88C2750CE60005C1D5C /* QuizCell.xib in Resources */,
+				0267609F275F3CB0007E254B /* ResultTableViewCell.xib in Resources */,
 				0219F7452754CDB50024517A /* SelectQuizTableViewCell.xib in Resources */,
 				02AFB84A2750A596005C1D5C /* Main.storyboard in Resources */,
+				024C114F27608A6D00505FC4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +225,7 @@
 			files = (
 				02AFB88B2750CE60005C1D5C /* QuizCell.swift in Sources */,
 				0219F7442754CDB50024517A /* SelectQuizTableViewCell.swift in Sources */,
+				0267609E275F3CB0007E254B /* ResultTableViewCell.swift in Sources */,
 				02AFB8832750CB27005C1D5C /* SelectQuizTableViewController.swift in Sources */,
 				02AFB8882750CE1F005C1D5C /* AnswerQuizViewController.swift in Sources */,
 				02AFB8862750CB71005C1D5C /* SelectHistoryTableViewController.swift in Sources */,
@@ -446,6 +458,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		024C115027608C7200505FC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		02676099275F3339007E254B /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -457,6 +477,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		024C115127608C7200505FC4 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 024C115027608C7200505FC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
 		0267609A275F3339007E254B /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 02676099275F3339007E254B /* XCRemoteSwiftPackageReference "Charts" */;

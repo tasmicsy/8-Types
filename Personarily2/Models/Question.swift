@@ -9,6 +9,7 @@ import Foundation
 
 struct QuestionSeries {
     var title: String
+    var description: String
     var question: [Question]
 }
 
@@ -25,14 +26,16 @@ struct Question{
     }
 }
 
-var answer1 = [0,0,0,0,0,0,0,0]
+var answer1 = [2,4,5,-2,1,2,3,4] //zerosに戻してね
 var answerLabel1 = ["外向性", "現実性", "論理性", "計画性", "解放性", "誠実性", "協調性", "神経性"]
 // MARK: - 使わなかった
 //struct Answers{
 //    static var aArray: [Int] = []
 //}
 // MARK: - questions
-let q1 = [Question(t: "自分一人の時間が大切だと思う。", c: 1, o: false),
+let q1 = [
+    //Question(t: "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890", c: 1, o: false),
+    Question(t: "自分一人の時間が大切だと思う。", c: 1, o: false),
           Question(t: "きついことにも立ち向かって諦めない。", c: 6, o: true),
           Question(t: "習慣に従って安定を維持することを好む。", c: 5, o: false),
           Question(t: "宿題や課題はまとめて一気にやるタイプである。", c: 4, o: false),
@@ -157,8 +160,29 @@ let q2 = [Question(t: "2自分一人の時間が大切だと思う。", c: 1, o:
           Question(t: "2宿題や課題はまとめて一気にやるタイプである。", c: 1, o: false),
           Question(t: "2意見をはっきり述べ、グループを先導することに満足を覚える。", c: 1, o: false)
 ]
+// q1をtype別に分けた。
+var quizWithTypes: [[Question]] {
+    var q: [[Question]] = [[],[],[],[],[],[],[],[]]
+    for i in 0...95{
+        for k in 1...8{
+            if q1[i].character == k{
+                print("\(i)だよ")
+                print("kは\(k)だよ")
+                print("qは\(q)だよ")
+                q[k-1].append(q1[i])
+            }
+        }
+    }
+    return q
+  
+}
 
-let questions = [QuestionSeries(title: "この前やったやつ", question: q1),
-                 QuestionSeries(title: "質問シリーズ②", question: q2),
-                 QuestionSeries(title: "質問シリーズ③", question: q1),
-                 QuestionSeries(title: "質問シリーズ④", question: q2)]
+let questions = [QuestionSeries(title: answerLabel1[0], description: "テスト1", question: quizWithTypes[0]),
+                 QuestionSeries(title: answerLabel1[1], description: "テスト2",question: quizWithTypes[1]),
+                 QuestionSeries(title: answerLabel1[2], description: "テスト3",question: quizWithTypes[2]),
+                 QuestionSeries(title: answerLabel1[3], description: "テスト4",question: quizWithTypes[3]),
+                 QuestionSeries(title: answerLabel1[4], description: "テスト5",question: quizWithTypes[4]),
+                 QuestionSeries(title: answerLabel1[5], description: "テスト6",question: quizWithTypes[5]),
+                 QuestionSeries(title: answerLabel1[6], description: "テスト7",question: quizWithTypes[6]),
+                 QuestionSeries(title: answerLabel1[7], description: "テスト8",question: quizWithTypes[7]),
+                QuestionSeries(title: "統合レポート", description: "", question: q1)]

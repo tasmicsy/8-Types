@@ -25,6 +25,7 @@ class QuizCell: UITableViewCell {
     }
     @IBOutlet weak var questionLabel: UILabel!
     
+    @IBOutlet weak var questionNumberLabel: UILabel!
     @IBOutlet var answerButtons: [UIButton]!
     
     var delegate: QuizCellDelegate?
@@ -55,12 +56,15 @@ class QuizCell: UITableViewCell {
             if index == currentIndex {
                // answerButton.title = "●"
                 answerButton.setTitle("●", for: .normal)
-                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(K.fontSizes[index]))
+                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: 50)
+//                self.addSubview(answerButton)
+                
+//                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(K.fontSizes[index]))
                 //print(answerButton.titleLabel?.text)
 
             } else {
                 answerButton.setTitle("○", for: .normal)
-                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(K.fontSizes[index]))
+//                answerButton.titleLabel?.font = UIFont.systemFont(ofSize: CGFloat(K.fontSizes[index]))
 
             }
         }

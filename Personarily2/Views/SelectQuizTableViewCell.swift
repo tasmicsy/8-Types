@@ -9,6 +9,9 @@ import UIKit
 
 class SelectQuizTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var explanationLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var seriesLabel: UILabel!
     
     @IBOutlet weak var seriesView: UIView!
@@ -19,7 +22,7 @@ class SelectQuizTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: false)
         
         // Configure the view for the selected state
     }
