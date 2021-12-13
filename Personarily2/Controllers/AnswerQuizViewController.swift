@@ -30,7 +30,35 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
     }
     
 
+    @IBAction func checkResultButtonTapped(_ sender: UIButton) {
+        var questionNumber = 0
 
+        
+        // 全部回答したか確認
+        for i in q.question {
+            questionNumber += 1
+            if i.answer == nil {
+                let alert: UIAlertController = UIAlertController(title: "未回答あり", message: "Q\(questionNumber)が未回答です。", preferredStyle: UIAlertController.Style.alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                    // ボタンが押された時の処理を書く（クロージャ実装）
+                    (action: UIAlertAction!) -> Void in
+                    print("OK")
+                    return
+                })
+                alert.addAction(defaultAction)
+                present(alert, animated: true, completion: nil)
+
+                
+            }
+        }
+        // answer全部回答されていればページ遷移
+        if q.title == "統合レポート" {
+            performSegue(withIdentifier: "CheckResultSegueIntegrated", sender: sender)
+        } else{
+            performSegue(withIdentifier: "CheckResultSegue", sender: sender)
+        }
+    }
+    
 
     // MARK: - Navigation
 
@@ -39,7 +67,7 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
 //        // Get the new view controller using segue.destination.
 //        // Pass the selected object to the new view controller.
         if segue.identifier == K.Segue.checkResult {
-            let resultViewController = segue.destination as! ResultViewController
+            let resultViewController = segue.destination as! ResultMainViewController
             resultViewController.q = q
     }
     

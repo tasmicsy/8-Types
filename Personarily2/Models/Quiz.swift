@@ -9,6 +9,21 @@ import Foundation
 import UIKit
 
 struct QuizBrain {
+    static func CalculateScoresOfOneQuestionSeries(_ q: QuestionSeries){
+  
+        for oneQuestion in q.question{
+            if let answer = oneQuestion.answer {
+            if oneQuestion.order{
+                parcentageInt +=  Float(answer - 2)
+            }else{
+                parcentageInt += Float(2 - answer)
+            }
+            }
+
+        }
+        parcentageInt = parcentageInt/24*50
+        
+    }
     static func CalculateCharacters(_ q:QuestionSeries) {
         
         for oneQuestion in q.question {

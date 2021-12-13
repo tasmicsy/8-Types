@@ -18,6 +18,7 @@ struct Question{
     var character: Int //外向性: 1, 現実性: 2, 論理性: 3, 計画性: 4, 開放性: 5, 誠実性: 6, 協調性: 7
     var order: Bool //順: true, 逆: false
     var answer: Int?
+
     //static var answer: Int?
     init(t: String, c: Int, o:Bool){
         text = t
@@ -27,6 +28,7 @@ struct Question{
 }
 
 var answer1 = [2,4,5,-2,1,2,3,4] //zerosに戻してね
+var parcentageInt: Float =  0.0
 var answerLabel1 = ["外向性", "現実性", "論理性", "計画性", "解放性", "誠実性", "協調性", "神経性"]
 // MARK: - 使わなかった
 //struct Answers{
@@ -154,12 +156,16 @@ let q1 = [
           
 ]
 
-let q2 = [Question(t: "2自分一人の時間が大切だと思う。", c: 1, o: false),
-          Question(t: "2きついことにも立ち向かって諦めない。", c: 1, o: false),
-          Question(t: "2習慣に従って安定を維持することを好む。", c: 1, o: false),
-          Question(t: "2宿題や課題はまとめて一気にやるタイプである。", c: 1, o: false),
-          Question(t: "2意見をはっきり述べ、グループを先導することに満足を覚える。", c: 1, o: false)
-]
+// MARK: - Results
+
+
+
+//let q2 = [Question(t: "2自分一人の時間が大切だと思う。", c: 1, o: false),
+//          Question(t: "2きついことにも立ち向かって諦めない。", c: 1, o: false),
+//          Question(t: "2習慣に従って安定を維持することを好む。", c: 1, o: false),
+//          Question(t: "2宿題や課題はまとめて一気にやるタイプである。", c: 1, o: false),
+//          Question(t: "2意見をはっきり述べ、グループを先導することに満足を覚える。", c: 1, o: false)
+//]
 // q1をtype別に分けた。
 var quizWithTypes: [[Question]] {
     var q: [[Question]] = [[],[],[],[],[],[],[],[]]
