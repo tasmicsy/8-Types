@@ -10,6 +10,7 @@ import CoreData
 
 class SelectHistoryTableViewController: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var mainTitle: String = ""
     var historyArray: [History] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,19 @@ class SelectHistoryTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if historyArray[indexPath.row].title == "統合レポート" {
+            performSegue(withIdentifier: "IntegratedHisotryToResultSegue", sender: self)
+        } else{
+
+            parcentageInt = Float(historyArray[indexPath.row].percentage - 50)
+            mainTitle = historyArray[indexPath.row].title!
+            print("タイトルは\(parcentageInt)")
+            performSegue(withIdentifier: "HistoryToResultSegue", sender: Any?.self)
+        }
+
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,14 +106,23 @@ class SelectHistoryTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "HistoryToResultSegue" {
+        let destinationVC = segue.destination as! ResultMainViewController
+            destinationVC.maintitle = mainTitle
+            print("タイトルは\(parcentageInt)")
+            print(mainTitle)
+        }else {
+            print("何かがおかしい")
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

@@ -20,27 +20,21 @@ class ResultMainViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var q: QuestionSeries!
+    var maintitle: String!
+    var nextTitle: String?
     var parcentageIntInt = 0
 
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        QuizBrain.CalculateScoresOfOneQuestionSeries(q)
         
-        let collection = Firestore.firestore().collection("answers")
-        
-        let answersToFirebase = ["title": q.title, "q01": q.question[0].answer!, "q02": q.question[1].answer!, "q03": q.question[2].answer!, "q04": q.question[3].answer!, "q05": q.question[4].answer!, "q06": q.question[5].answer!, "q07": q.question[6].answer!, "q08": q.question[7].answer!, "q09": q.question[8].answer!, "q10": q.question[9].answer!, "q11": q.question[10].answer!, "q12": q.question[11].answer!] as [String : Any]
-        
-        collection.addDocument(data: answersToFirebase)
-        
-        yourCharLabel.text = "あなたの\(q.title)は..."
+        yourCharLabel.text = "あなたの\( maintitle!)は..."
         parcentageIntInt = Int(parcentageInt+50)
-        charParcentageLabel.text = "\(q.title)　\(parcentageIntInt)%"
+        charParcentageLabel.text = "\( maintitle!)　\(parcentageIntInt)%"
         
         //ボタンタイトル変更、次のシリーズない場合はボタンを隠す。
-        if let buttonTitle = q.nextTitle{
+        if let buttonTitle = nextTitle{
             nextButton.isHidden = false
             nextButton.setTitle("\(buttonTitle)を診断する", for: .normal)
         }else{
@@ -56,19 +50,10 @@ class ResultMainViewController: UIViewController {
         //CoreDataに保存する
 
         
-        let history = History(context: context)
-        history.title = q.title
-        history.date = Date()
-        history.percentage = Int64(parcentageIntInt)
-        saveHistory()
-    }
+        
     
-    func saveHistory(){
-        do {
-           try context.save()
-        }catch{
-            print("Error saving context\(error)")
-        }
+    
+
     }
     
     // MARK: - Navigation
@@ -80,7 +65,7 @@ class ResultMainViewController: UIViewController {
         if segue.identifier == "nextQuestionSegue" {
             let quizViewController = segue.destination as! AnswerQuizViewController
             for qSeries in questions{
-                if qSeries.title == q.nextTitle{
+                if qSeries.title == nextTitle{
             quizViewController.q = qSeries
                     return
                 }

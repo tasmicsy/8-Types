@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import CoreData
 
 class AnswerQuizViewController: UIViewController, UITableViewDelegate {
 
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var q: QuestionSeries!
     
     @IBOutlet weak var quizTableView: UITableView!
@@ -19,6 +21,7 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         //Answers.aArray = Array(repeating: 0, count: q.question.count)
         super.viewDidLoad()
+
        quizTableView.dataSource = self
         quizTableView.delegate = self
         
@@ -28,27 +31,33 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
     
         // Do any additional setup after loading the view.
         navigationItem.title = q.title
+        
+        let leftButton = UIBarButtonItem(title: "トップに戻る", style: UIBarButtonItem.Style.plain, target: self, action: #selector(barButtonTapped(_:)))
+        self.navigationItem.leftBarButtonItem = leftButton
     }
     
+    @objc func barButtonTapped(_ sender: UIBarButtonItem){
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
     @IBAction func checkResultButtonTapped(_ sender: UIButton) {
         var questionNumber = 0
 
-        
         // 全部回答したか確認
         for i in q.question {
             questionNumber += 1
+            //print(i.answer)
             if i.answer == nil {
                 let alert: UIAlertController = UIAlertController(title: "未回答あり", message: "Q\(questionNumber)が未回答です。", preferredStyle: UIAlertController.Style.alert)
                 let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                     // ボタンが押された時の処理を書く（クロージャ実装）
                     (action: UIAlertAction!) -> Void in
-                    print("OK")
-                    return
+                    //print("OK")
+                 
                 })
                 alert.addAction(defaultAction)
                 present(alert, animated: true, completion: nil)
-
+                return
                 
             }
         }
@@ -67,12 +76,37 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        // Get the new view controller using segue.destination.
 //        // Pass the selected object to the new view controller.
+      
         if segue.identifier == K.Segue.checkResult {
             let resultViewController = segue.destination as! ResultMainViewController
-            resultViewController.q = q
+            
+            QuizBrain.CalculateScoresOfOneQuestionSeries(q)
+            resultViewController.maintitle = q.title
+            resultViewController.nextTitle = q.nextTitle
+            // Firebaseに保存
+            
+            let collection = Firestore.firestore().collection("answers")
+            
+            let answersToFirebase = ["title": q.title, "q01": q.question[0].answer!, "q02": q.question[1].answer!, "q03": q.question[2].answer!, "q04": q.question[3].answer!, "q05": q.question[4].answer!, "q06": q.question[5].answer!, "q07": q.question[6].answer!, "q08": q.question[7].answer!, "q09": q.question[8].answer!, "q10": q.question[9].answer!, "q11": q.question[10].answer!, "q12": q.question[11].answer!] as [String : Any]
+            
+            collection.addDocument(data: answersToFirebase)
+            
+            //coredataに保存
+            let history = History(context: context)
+            history.title = q.title
+            history.date = Date()
+            history.percentage = Int64(parcentageInt+50)
+            saveHistory()
     }
     
 
+}
+    func saveHistory(){
+        do {
+           try context.save()
+        }catch{
+            print("Error saving context\(error)")
+        }
 }
 }
 
@@ -131,3 +165,4 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+

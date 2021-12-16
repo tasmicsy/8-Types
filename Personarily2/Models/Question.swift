@@ -188,9 +188,9 @@ var quizWithTypes: [[Question]] {
     for i in 0...95{
         for k in 1...8{
             if q1[i].character == k{
-                print("\(i)だよ")
-                print("kは\(k)だよ")
-                print("qは\(q)だよ")
+//                print("\(i)だよ")
+//                print("kは\(k)だよ")
+//                print("qは\(q)だよ")
                 q[k-1].append(q1[i])
             }
         }

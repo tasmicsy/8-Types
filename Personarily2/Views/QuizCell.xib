@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,27 +23,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="270" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ueb-fP-cy2">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="LQC-OT-lrw"/>
-                                            <constraint firstAttribute="height" constant="30" id="pmX-Dm-jtl"/>
+                                            <constraint firstAttribute="width" constant="50" identifier="20" id="LQC-OT-lrw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テストテストテストテストテストテスト" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-Zy-kCG">
-                                        <rect key="frame" x="50" y="0.0" width="220" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="220" id="rff-UX-CMX"/>
-                                        </constraints>
+                                        <rect key="frame" x="50" y="0.0" width="220" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Z27-gl-x0e"/>
+                                    <constraint firstAttribute="height" constant="60" identifier="9" id="Z27-gl-x0e"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ra9-KN-MRb">
@@ -106,7 +102,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ZMo-mt-9vZ"/>
+                                    <constraint firstAttribute="height" constant="50" identifier="10" id="ZMo-mt-9vZ"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yyI-nk-6av">
@@ -130,10 +126,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Wgb-LP-8M8" secondAttribute="bottom" constant="15" id="02V-sa-iWb"/>
-                    <constraint firstAttribute="trailing" secondItem="Wgb-LP-8M8" secondAttribute="trailing" constant="30" id="VY9-3F-9cs"/>
-                    <constraint firstItem="Wgb-LP-8M8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="sYF-8n-wED"/>
-                    <constraint firstItem="Wgb-LP-8M8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="t3p-rR-9Rc"/>
+                    <constraint firstAttribute="bottom" secondItem="Wgb-LP-8M8" secondAttribute="bottom" constant="15" identifier="11" id="02V-sa-iWb"/>
+                    <constraint firstAttribute="trailing" secondItem="Wgb-LP-8M8" secondAttribute="trailing" constant="30" identifier="12" id="VY9-3F-9cs"/>
+                    <constraint firstItem="Wgb-LP-8M8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" identifier="13" id="sYF-8n-wED"/>
+                    <constraint firstItem="Wgb-LP-8M8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" identifier="14" id="t3p-rR-9Rc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
