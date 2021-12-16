@@ -9,8 +9,25 @@ import Foundation
 
 struct QuestionSeries {
     var title: String
+    var nextTitle: String?
     var description: String
     var question: [Question]
+    
+}
+struct AnswersToFirebase {
+    var title: String
+    var q1: Int
+    var q2: Int
+    var q3: Int
+    var q4: Int
+    var q5: Int
+    var q6: Int
+    var q7: Int
+    var q8: Int
+    var q9: Int
+    var q10: Int
+    var q11: Int
+    var q12: Int
 }
 
 struct Question{
@@ -26,7 +43,6 @@ struct Question{
         order = o
     }
 }
-
 var answer1 = [2,4,5,-2,1,2,3,4] //zerosに戻してね
 var parcentageInt: Float =  0.0
 var answerLabel1 = ["外向性", "現実性", "論理性", "計画性", "解放性", "誠実性", "協調性", "神経性"]
@@ -183,12 +199,12 @@ var quizWithTypes: [[Question]] {
   
 }
 
-let questions = [QuestionSeries(title: answerLabel1[0], description: "テスト1", question: quizWithTypes[0]),
-                 QuestionSeries(title: answerLabel1[1], description: "テスト2",question: quizWithTypes[1]),
-                 QuestionSeries(title: answerLabel1[2], description: "テスト3",question: quizWithTypes[2]),
-                 QuestionSeries(title: answerLabel1[3], description: "テスト4",question: quizWithTypes[3]),
-                 QuestionSeries(title: answerLabel1[4], description: "テスト5",question: quizWithTypes[4]),
-                 QuestionSeries(title: answerLabel1[5], description: "テスト6",question: quizWithTypes[5]),
-                 QuestionSeries(title: answerLabel1[6], description: "テスト7",question: quizWithTypes[6]),
+let questions = [QuestionSeries(title: answerLabel1[0], nextTitle: answerLabel1[1], description: "テスト1", question: quizWithTypes[0]),
+                 QuestionSeries(title: answerLabel1[1], nextTitle: answerLabel1[2],description: "テスト2",question: quizWithTypes[1]),
+                 QuestionSeries(title: answerLabel1[2], nextTitle: answerLabel1[3],description: "テスト3",question: quizWithTypes[2]),
+                 QuestionSeries(title: answerLabel1[3], nextTitle: answerLabel1[4],description: "テスト4",question: quizWithTypes[3]),
+                 QuestionSeries(title: answerLabel1[4], nextTitle: answerLabel1[5],description: "テスト5",question: quizWithTypes[4]),
+                 QuestionSeries(title: answerLabel1[5], nextTitle: answerLabel1[6],description: "テスト6",question: quizWithTypes[5]),
+                 QuestionSeries(title: answerLabel1[6], nextTitle: answerLabel1[7],description: "テスト7",question: quizWithTypes[6]),
                  QuestionSeries(title: answerLabel1[7], description: "テスト8",question: quizWithTypes[7]),
                 QuestionSeries(title: "統合レポート", description: "", question: q1)]

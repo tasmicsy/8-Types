@@ -27,6 +27,7 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
         quizTableView.register(UINib(nibName: "QuizCell", bundle: nil), forCellReuseIdentifier: "QuizCellIdentifier")
     
         // Do any additional setup after loading the view.
+        navigationItem.title = q.title
     }
     
 

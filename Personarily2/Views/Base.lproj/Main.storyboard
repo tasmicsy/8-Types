@@ -161,7 +161,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fy2-8a-sju">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -174,7 +174,7 @@
                             <constraint firstItem="YcS-YZ-3kS" firstAttribute="centerX" secondItem="Yk1-gB-gAt" secondAttribute="centerX" id="Ygi-Lz-Vh1"/>
                             <constraint firstItem="VpH-tA-1p2" firstAttribute="bottom" secondItem="YcS-YZ-3kS" secondAttribute="bottom" constant="30" id="naH-MS-1kj"/>
                             <constraint firstItem="Fy2-8a-sju" firstAttribute="top" secondItem="VpH-tA-1p2" secondAttribute="top" id="tzG-9s-AYI"/>
-                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="top" secondItem="Fy2-8a-sju" secondAttribute="bottom" id="vUh-0U-twm"/>
+                            <constraint firstItem="YcS-YZ-3kS" firstAttribute="top" secondItem="Fy2-8a-sju" secondAttribute="bottom" constant="10" id="vUh-0U-twm"/>
                             <constraint firstItem="VpH-tA-1p2" firstAttribute="trailing" secondItem="YcS-YZ-3kS" secondAttribute="trailing" constant="30" id="zJp-k1-9v4"/>
                         </constraints>
                     </view>
@@ -284,7 +284,7 @@
             </objects>
             <point key="canvasLocation" x="3370" y="117"/>
         </scene>
-        <!--Result Main View Controller-->
+        <!--診断結果-->
         <scene sceneID="xj3-7s-BII">
             <objects>
                 <viewController id="b9P-Mq-ZS7" customClass="ResultMainViewController" customModule="Personarily2" customModuleProvider="target" sceneMemberID="viewController">
@@ -364,7 +364,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="HLN-Yt-mhk" kind="show" id="pYB-rV-fdo"/>
+                                                    <segue destination="HLN-Yt-mhk" kind="show" identifier="nextQuestionSegue" id="pYB-rV-fdo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgL-jr-ga9">
@@ -413,11 +413,13 @@
                             <constraint firstItem="avi-hs-iCe" firstAttribute="top" secondItem="Ujl-dy-zJA" secondAttribute="top" id="syE-9A-Rtz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FC5-rd-vxv"/>
+                    <navigationItem key="navigationItem" title="診断結果" id="FC5-rd-vxv"/>
                     <connections>
                         <outlet property="charParcentageLabel" destination="e8U-Yp-6JT" id="qh4-LI-Lmq"/>
                         <outlet property="descriptionLabel" destination="Had-2y-7JA" id="GwR-ye-Rh5"/>
                         <outlet property="descriptionSecondLabel" destination="2gH-S5-3Zd" id="9yZ-R8-MWU"/>
+                        <outlet property="nextButton" destination="zss-Ny-1NG" id="bbc-5T-Bgm"/>
+                        <outlet property="proceedToNextSeriesLabel" destination="phT-G7-KnD" id="vgC-SE-S8A"/>
                         <outlet property="yourCharLabel" destination="ybm-Ix-T7y" id="WBp-yV-jhf"/>
                     </connections>
                 </viewController>
@@ -428,7 +430,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vks-H8-mul"/>
         <segue reference="pYB-rV-fdo"/>
     </inferredMetricsTieBreakers>
     <resources>
