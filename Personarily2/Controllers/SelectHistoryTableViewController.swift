@@ -6,40 +6,56 @@
 //
 
 import UIKit
+import CoreData
 
 class SelectHistoryTableViewController: UITableViewController {
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var historyArray: [History] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+        // Coredataから呼び出し
+        let request : NSFetchRequest<History> = History.fetchRequest()
+        do {
+           historyArray =  try context.fetch(request)
+        } catch {
+            print("Error fetching data, \(error)")
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.register(UINib(nibName:"SelectHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "SelectHistoryTableViewCell")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return historyArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SelectHistoryTableViewCell", for: indexPath) as! SelectHistoryTableViewCell
 
         // Configure the cell...
-
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.M.d"
+        let dateString = dateFormatter.string(from: historyArray[indexPath.row].date!)
+        print("データは\(historyArray[indexPath.row].date!)")
+        cell.dateLabel.text = dateString
+        cell.parcentageLabel.text = String(historyArray[indexPath.row].percentage)
+        cell.characterLabel.text = "\( historyArray[indexPath.row].title!)%"
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

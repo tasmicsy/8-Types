@@ -24,6 +24,9 @@ struct QuizBrain {
         parcentageInt = parcentageInt/24*50
         
     }
+    
+
+    
 
     static func CalculateCharacters(_ q:QuestionSeries) {
         

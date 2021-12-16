@@ -19,6 +19,7 @@ class ResultMainViewController: UIViewController {
     @IBOutlet weak var proceedToNextSeriesLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var q: QuestionSeries!
     var parcentageIntInt = 0
 
@@ -51,9 +52,24 @@ class ResultMainViewController: UIViewController {
         // 前に戻るボタン隠す
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
+    
+        //CoreDataに保存する
+
+        
+        let history = History(context: context)
+        history.title = q.title
+        history.date = Date()
+        history.percentage = Int64(parcentageIntInt)
+        saveHistory()
     }
     
-
+    func saveHistory(){
+        do {
+           try context.save()
+        }catch{
+            print("Error saving context\(error)")
+        }
+    }
     
     // MARK: - Navigation
 

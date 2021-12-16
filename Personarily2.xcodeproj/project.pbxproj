@@ -13,6 +13,8 @@
 		024C114F27608A6D00505FC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 024C114E27608A6D00505FC4 /* GoogleService-Info.plist */; };
 		0267609E275F3CB0007E254B /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267609C275F3CAF007E254B /* ResultTableViewCell.swift */; };
 		0267609F275F3CB0007E254B /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0267609D275F3CAF007E254B /* ResultTableViewCell.xib */; };
+		0284F66D276B281A00477EFF /* SelectHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0284F66B276B281A00477EFF /* SelectHistoryTableViewCell.swift */; };
+		0284F66E276B281A00477EFF /* SelectHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0284F66C276B281A00477EFF /* SelectHistoryTableViewCell.xib */; };
 		02A606212766DE2F00B86D63 /* ResultMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A606202766DE2F00B86D63 /* ResultMainViewController.swift */; };
 		02AFB8432750A596005C1D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8422750A596005C1D5C /* AppDelegate.swift */; };
 		02AFB8452750A596005C1D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFB8442750A596005C1D5C /* SceneDelegate.swift */; };
@@ -43,6 +45,8 @@
 		024C114E27608A6D00505FC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0267609C275F3CAF007E254B /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		0267609D275F3CAF007E254B /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
+		0284F66B276B281A00477EFF /* SelectHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0284F66C276B281A00477EFF /* SelectHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		02A606202766DE2F00B86D63 /* ResultMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMainViewController.swift; sourceTree = "<group>"; };
 		02AFB83F2750A596005C1D5C /* Personarily2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personarily2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AFB8422750A596005C1D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				0219F7432754CDB50024517A /* SelectQuizTableViewCell.xib */,
 				0267609C275F3CAF007E254B /* ResultTableViewCell.swift */,
 				0267609D275F3CAF007E254B /* ResultTableViewCell.xib */,
+				0284F66B276B281A00477EFF /* SelectHistoryTableViewCell.swift */,
+				0284F66C276B281A00477EFF /* SelectHistoryTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 				02AFB84F2750A598005C1D5C /* Assets.xcassets in Resources */,
 				02AFB88C2750CE60005C1D5C /* QuizCell.xib in Resources */,
 				0267609F275F3CB0007E254B /* ResultTableViewCell.xib in Resources */,
+				0284F66E276B281A00477EFF /* SelectHistoryTableViewCell.xib in Resources */,
 				0219F7452754CDB50024517A /* SelectQuizTableViewCell.xib in Resources */,
 				02AFB84A2750A596005C1D5C /* Main.storyboard in Resources */,
 				024C114F27608A6D00505FC4 /* GoogleService-Info.plist in Resources */,
@@ -234,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0284F66D276B281A00477EFF /* SelectHistoryTableViewCell.swift in Sources */,
 				02AFB88B2750CE60005C1D5C /* QuizCell.swift in Sources */,
 				0219F7442754CDB50024517A /* SelectQuizTableViewCell.swift in Sources */,
 				0267609E275F3CB0007E254B /* ResultTableViewCell.swift in Sources */,
