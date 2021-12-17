@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SKAdNetworkItems</key>
+	<array/>
+	<key>SKAdNetworkIdentifier</key>
+	<string>cstr6suwn9.skadnetwork</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3014443422203887~9037133257</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

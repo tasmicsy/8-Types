@@ -207,4 +207,6 @@ let questions = [QuestionSeries(title: answerLabel1[0], nextTitle: answerLabel1[
                  QuestionSeries(title: answerLabel1[5], nextTitle: answerLabel1[6],description: "テスト6",question: quizWithTypes[5]),
                  QuestionSeries(title: answerLabel1[6], nextTitle: answerLabel1[7],description: "テスト7",question: quizWithTypes[6]),
                  QuestionSeries(title: answerLabel1[7], description: "テスト8",question: quizWithTypes[7]),
-                QuestionSeries(title: "統合レポート", description: "", question: q1)]
+                 // 有料化したら//はずす
+                 // QuestionSeries(title: "統合レポート", description: "", question: q1)
+]
