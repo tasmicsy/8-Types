@@ -17,15 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="125" translatesAutoresizingMaskIntoConstraints="NO" id="xev-8g-4QT">
-                                <rect key="frame" x="30" y="275" width="354" height="346.5"/>
+                                <rect key="frame" x="30" y="276" width="354" height="344.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-iG-oSW">
-                                        <rect key="frame" x="74.5" y="0.0" width="205.5" height="84"/>
+                                        <rect key="frame" x="57" y="0.0" width="240" height="82"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Case8">
+                                            <fragment content="8 Types">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="72" name="Impact"/>
+                                                    <font key="NSFont" size="70" name="Impact"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -33,7 +33,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性格診断は、あなたの内面を映し出す方法です。人からどのように見られているか、良いとことろ悪いところを見つめ直してみましょう。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKd-6D-sxG">
-                                        <rect key="frame" x="0.0" y="209" width="354" height="137.5"/>
+                                        <rect key="frame" x="0.0" y="207" width="354" height="137.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>

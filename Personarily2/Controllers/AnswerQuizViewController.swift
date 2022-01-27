@@ -8,15 +8,17 @@
 import UIKit
 import FirebaseFirestore
 import CoreData
+import GoogleMobileAds
 
-class AnswerQuizViewController: UIViewController, UITableViewDelegate {
+class AnswerQuizViewController: UIViewController, UITableViewDelegate, GADFullScreenContentDelegate {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var q: QuestionSeries!
     
     @IBOutlet weak var quizTableView: UITableView!
     
-    
+    private var interstitial: GADInterstitialAd?
+
     
     override func viewDidLoad() {
         //Answers.aArray = Array(repeating: 0, count: q.question.count)
@@ -24,6 +26,20 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
 
        quizTableView.dataSource = self
         quizTableView.delegate = self
+        
+        // Google ads
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                    request: request,
+                          completionHandler: { [self] ad, error in
+                            if let error = error {
+                              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                              return
+                            }
+                            interstitial = ad
+                            interstitial?.fullScreenContentDelegate = self
+                          }
+        )
         
         // cell xibファイルを使うときは書く必要があるやつ。
 //        quizTableView.register(UINib(nibName: K.Cells.QuizCellNibName, bundle: nil), forCellReuseIdentifier: K.Cells.QuizCellIdentifier)
@@ -61,6 +77,12 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
                 
             }
         }
+        //Google ads
+        if interstitial != nil {
+            interstitial!.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
         // answer全部回答されていればページ遷移
         if q.title == "統合レポート" {
             performSegue(withIdentifier: "CheckResultSegueIntegrated", sender: sender)
@@ -97,6 +119,8 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
             history.date = Date()
             history.percentage = Int64(parcentageInt+50)
             saveHistory()
+            
+
     }
     
 
@@ -108,6 +132,22 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate {
             print("Error saving context\(error)")
         }
 }
+    
+    // Google Ads
+    /// Tells the delegate that the ad failed to present full screen content.
+      func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+      }
+
+      /// Tells the delegate that the ad presented full screen content.
+      func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+      }
+
+      /// Tells the delegate that the ad dismissed full screen content.
+      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+      }
 }
 
 // MARK: - quizTableViewのアレンジ

@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
+
 class ResultMainViewController: UIViewController {
     
     
