@@ -31,9 +31,10 @@ class ResultMainViewController: UIViewController {
         super.viewDidLoad()
         
         yourCharLabel.text = "あなたの\( maintitle!)は..."
-        parcentageIntInt = Int(parcentageInt+50)
+        parcentageIntInt = Int(parcentageInt)
         charParcentageLabel.text = "\( maintitle!)　\(parcentageIntInt)%"
-        
+        descriptionLabel.text = labelForResult1
+        descriptionSecondLabel.text = labelForResult2
         //ボタンタイトル変更、次のシリーズない場合はボタンを隠す。
         if let buttonTitle = nextTitle{
             nextButton.isHidden = false

@@ -4,7 +4,7 @@
 //
 //  Created by Sae Obata on 2021/11/29.
 //
-
+//　未使用
 import UIKit
 //import Charts
 

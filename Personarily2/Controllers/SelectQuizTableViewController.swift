@@ -51,6 +51,7 @@ class SelectQuizTableViewController: UITableViewController {
             cell.explanationLabel.text = questions[indexPath.row].description
     //        cell.seriesLabel.fon
             cell.seriesView.backgroundColor = K.teruColors[0]
+            cell.descriptionLabel.text = questions[indexPath.row].detailDescription
             //cell.seriesView.backgroundColor = K.colors[indexPath.row]
             cell.seriesLabel.textColor = .white
         }
