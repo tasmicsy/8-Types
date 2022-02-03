@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0210F7ED27AB820300201D81 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210F7EC27AB820300201D81 /* TermsViewController.swift */; };
+		0210F7EF27AB977600201D81 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210F7EE27AB977600201D81 /* PrivacyPolicyViewController.swift */; };
+		0210F7F127ABA29900201D81 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210F7F027ABA29900201D81 /* InfoViewController.swift */; };
 		0219F7442754CDB50024517A /* SelectQuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0219F7422754CDB50024517A /* SelectQuizTableViewCell.swift */; };
 		0219F7452754CDB50024517A /* SelectQuizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0219F7432754CDB50024517A /* SelectQuizTableViewCell.xib */; };
 		021E60EF2754BF41002EACC3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E60EE2754BF41002EACC3 /* ResultViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0210F7EC27AB820300201D81 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TermsViewController.swift; path = Personarily2/Controllers/TermsViewController.swift; sourceTree = SOURCE_ROOT; };
+		0210F7EE27AB977600201D81 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		0210F7F027ABA29900201D81 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0219F7422754CDB50024517A /* SelectQuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizTableViewCell.swift; sourceTree = "<group>"; };
 		0219F7432754CDB50024517A /* SelectQuizTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectQuizTableViewCell.xib; sourceTree = "<group>"; };
 		021E60EE2754BF41002EACC3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -136,12 +142,15 @@
 		02AFB87F2750CA97005C1D5C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0210F7EC27AB820300201D81 /* TermsViewController.swift */,
 				02AFB8462750A596005C1D5C /* ViewController.swift */,
 				02AFB8812750CB27005C1D5C /* SelectQuizTableViewController.swift */,
 				02AFB8852750CB71005C1D5C /* SelectHistoryTableViewController.swift */,
 				02AFB8872750CE1F005C1D5C /* AnswerQuizViewController.swift */,
 				021E60EE2754BF41002EACC3 /* ResultViewController.swift */,
 				02A606202766DE2F00B86D63 /* ResultMainViewController.swift */,
+				0210F7EE27AB977600201D81 /* PrivacyPolicyViewController.swift */,
+				0210F7F027ABA29900201D81 /* InfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -322,9 +331,12 @@
 				02AFB88E2750D426005C1D5C /* Quiz.swift in Sources */,
 				02AFB8432750A596005C1D5C /* AppDelegate.swift in Sources */,
 				02AFB8452750A596005C1D5C /* SceneDelegate.swift in Sources */,
+				0210F7ED27AB820300201D81 /* TermsViewController.swift in Sources */,
 				02AFB8902750D57F005C1D5C /* Question.swift in Sources */,
+				0210F7EF27AB977600201D81 /* PrivacyPolicyViewController.swift in Sources */,
 				02AFB84D2750A596005C1D5C /* Personarily2.xcdatamodeld in Sources */,
 				021E60EF2754BF41002EACC3 /* ResultViewController.swift in Sources */,
+				0210F7F127ABA29900201D81 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,16 +485,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = PNLDYAZN8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Personarily2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "性格診断";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "許可すると、より最適な広告が表示されるようになります。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -503,16 +519,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = PNLDYAZN8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Personarily2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "性格診断";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "許可すると、より最適な広告が表示されるようになります。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +542,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

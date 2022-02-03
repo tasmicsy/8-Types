@@ -10,6 +10,7 @@ import UIKit
 
 struct QuizBrain {
     static func CalculateScoresOfOneQuestionSeries(_ q: QuestionSeries){
+        parcentageInt = 0
   
         for oneQuestion in q.question{
             if let answer = oneQuestion.answer {
@@ -18,6 +19,7 @@ struct QuizBrain {
             }else{
                 parcentageInt += Float(2 - answer)
             }
+                //print(parcentageInt)
             }
 
         }

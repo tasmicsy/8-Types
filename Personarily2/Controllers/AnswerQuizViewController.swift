@@ -10,8 +10,8 @@ import FirebaseFirestore
 import CoreData
 import GoogleMobileAds
 
-class AnswerQuizViewController: UIViewController, UITableViewDelegate, GADFullScreenContentDelegate {
-
+class AnswerQuizViewController: UIViewController, UITableViewDelegate, GADFullScreenContentDelegate, GADBannerViewDelegate {
+    var bannerView: GADBannerView!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var q: QuestionSeries!
     
@@ -27,9 +27,21 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate, GADFullSc
        quizTableView.dataSource = self
         quizTableView.delegate = self
         
+        //バナー広告
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+     
+     bannerView.adUnitID = "ca-app-pub-3014443422203887/7149020254"
+     bannerView.rootViewController = self
+     bannerView.delegate = self
+        addBannerViewToView(bannerView)
+ 
+
+
+     bannerView.load(GADRequest())
+        
         // Google ads
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3014443422203887/4210691298",
                                     request: request,
                           completionHandler: { [self] ad, error in
                             if let error = error {
@@ -117,7 +129,9 @@ class AnswerQuizViewController: UIViewController, UITableViewDelegate, GADFullSc
             let history = History(context: context)
             history.title = q.title
             history.date = Date()
-            history.percentage = Int64(parcentageInt+50)
+            history.percentage = Int64(parcentageInt)
+            history.description1 = labelForResult1
+            history.description2 = labelForResult2
             saveHistory()
             
 
@@ -204,5 +218,53 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    //バナー広告関連
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+      bannerView.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(bannerView)
+      view.addConstraints(
+        [NSLayoutConstraint(item: bannerView,
+                            attribute: .bottom,
+                            relatedBy: .equal,
+                            toItem: view.safeAreaLayoutGuide,
+                            attribute: .bottom,
+                            multiplier: 1,
+                            constant: 0),
+         NSLayoutConstraint(item: bannerView,
+                            attribute: .centerX,
+                            relatedBy: .equal,
+                            toItem: view,
+                            attribute: .centerX,
+                            multiplier: 1,
+                            constant: 0)
+        
+        ])
+     }
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+
 }
 

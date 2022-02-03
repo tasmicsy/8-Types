@@ -39,10 +39,11 @@ class ResultMainViewController: UIViewController {
         if let buttonTitle = nextTitle{
             nextButton.isHidden = false
             nextButton.setTitle("\(buttonTitle)を診断する", for: .normal)
+            proceedToNextSeriesLabel.text = "次の診断に進む"
         }else{
             
             nextButton.isHidden = true
-            proceedToNextSeriesLabel.textColor = .white
+            proceedToNextSeriesLabel.text = "↓↓↓"
         }
         
         // 前に戻るボタン隠す

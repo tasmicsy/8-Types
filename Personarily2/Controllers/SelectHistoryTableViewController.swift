@@ -50,10 +50,10 @@ class SelectHistoryTableViewController: UITableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.M.d"
         let dateString = dateFormatter.string(from: historyArray[indexPath.row].date!)
-        print("データは\(historyArray[indexPath.row].date!)")
+        //print("データは\(historyArray[indexPath.row].date!)")
         cell.dateLabel.text = dateString
-        cell.parcentageLabel.text = String(historyArray[indexPath.row].percentage)
-        cell.characterLabel.text = "\( historyArray[indexPath.row].title!)%"
+        cell.parcentageLabel.text = "\(String(historyArray[indexPath.row].percentage))%"
+        cell.characterLabel.text = "\( historyArray[indexPath.row].title!)"
         return cell
     }
     
@@ -62,9 +62,11 @@ class SelectHistoryTableViewController: UITableViewController {
             performSegue(withIdentifier: "IntegratedHisotryToResultSegue", sender: self)
         } else{
 
-            parcentageInt = Float(historyArray[indexPath.row].percentage - 50)
+            parcentageInt = Float(historyArray[indexPath.row].percentage)
             mainTitle = historyArray[indexPath.row].title!
-            print("タイトルは\(parcentageInt)")
+            labelForResult1 = historyArray[indexPath.row].description1 ?? "データなし"
+            labelForResult2 = historyArray[indexPath.row].description2 ?? "データなし"
+            //print("タイトルは\(parcentageInt)")
             performSegue(withIdentifier: "HistoryToResultSegue", sender: Any?.self)
         }
 
